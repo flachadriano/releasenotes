@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :kink %><br>
-    <%= f.select :kind, [["Teste", 1]], include_blank: true %>
+    <%= f.label :kind %><br>
+    <%= f.select :kind, [["New", 1], ["Change", 2], ["Fix", 3]], include_blank: true %>
   </div>
   <div class="field">
     <%= f.label :component_id %><br>
