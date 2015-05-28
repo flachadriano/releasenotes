@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150527024408) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "components", force: :cascade do |t|
     t.string   "description", null: false
     t.datetime "created_at",  null: false
@@ -20,7 +23,7 @@ ActiveRecord::Schema.define(version: 20150527024408) do
   end
 
   create_table "notes", force: :cascade do |t|
-    t.integer  "type",         null: false
+    t.integer  "kind",         null: false
     t.integer  "component_id", null: false
     t.string   "description",  null: false
     t.string   "wiki"
@@ -28,6 +31,7 @@ ActiveRecord::Schema.define(version: 20150527024408) do
     t.datetime "updated_at",   null: false
   end
 
-  add_index "notes", ["component_id"], name: "index_notes_on_component_id"
+  add_index "notes", ["component_id"], name: "index_notes_on_component_id", using: :btree
 
+  add_foreign_key "notes", "components"
 end

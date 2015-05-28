@@ -28,14 +28,11 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: 5
-  username: 
-  password: 
 
 development:
-  database: releasenotesdevelopment
+  <<: *default
+  database: releasenotesdev
 
 test:
+  <<: *default
   database: releasenotestest
-
-production:
-  database: releasenotesproduction
