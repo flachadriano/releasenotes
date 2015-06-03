@@ -1,27 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Components</h1>
+<div class="panel panel-primary">
+  <div class="panel-heading"><h1>Listing Components</h1></div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @components.each do |component| %>
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= component.description %></td>
-        <td><%= link_to 'Show', component %></td>
-        <td><%= link_to 'Edit', edit_component_path(component) %></td>
-        <td><%= link_to 'Destroy', component, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Description</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @components.each do |component| %>
+        <tr>
+          <td><%= component.description %></td>
+          <td><%= link_to 'Show', component %></td>
+          <td><%= link_to 'Edit', edit_component_path(component) %></td>
+          <td><%= link_to 'Destroy', component, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Component', new_component_path %>
+  <br>
+
+  <%= link_to 'New Component', new_component_path, class: "btn btn-primary" %>
+</div>

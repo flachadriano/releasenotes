@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :component_id %><br>
-    <%= f.select :component_id, Component.all.collect{ |c| [ c.description, c.id ] }, include_blank: true %>
+    <%= f.select :component_id, Component.all.sort_by{ |c| c.description.downcase }.collect{ |c| [ c.description, c.id ] }, include_blank: true %>
   </div>
   <div class="field">
     <%= f.label :description %><br>

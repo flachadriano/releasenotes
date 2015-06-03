@@ -6,6 +6,10 @@ body {
   line-height: 18px;
 }
 
+form {
+  margin: 20px;
+}
+
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -18,21 +22,18 @@ pre {
   font-size: 11px;
 }
 
-a {
-  color: #000;
-  &:visited {
-    color: #666;
-  }
-  &:hover {
-    color: #fff;
-    background-color: #000;
-  }
-}
-
 div {
   &.field, &.actions {
     margin-bottom: 10px;
   }
+}
+
+.field input {
+  width: 300px;
+}
+
+.field select {
+  width: 300px;
 }
 
 #notice {

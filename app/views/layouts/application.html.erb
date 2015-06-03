@@ -8,8 +8,12 @@
 </head>
 <body>
 
-<%= link_to 'Components', components_path %>
-<%= link_to 'Notes', notes_path %>
+<nav>
+	<ul class="nav nav-tabs">
+		<li><%= link_to 'Components', components_path %></li>
+		<li><%= link_to 'Notes', notes_path %></li>
+	</ul>
+</nav>
 
 <%= yield %>
 
