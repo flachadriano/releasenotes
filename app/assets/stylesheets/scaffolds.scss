@@ -7,7 +7,7 @@ body {
 }
 
 form {
-  margin: 20px;
+  margin: 2em;
 }
 
 p, ol, ul, td {
@@ -26,6 +26,10 @@ div {
   &.field, &.actions {
     margin-bottom: 10px;
   }
+}
+
+.panel {
+  margin: 2em;
 }
 
 .field input {
