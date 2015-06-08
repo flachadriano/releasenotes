@@ -42,6 +42,8 @@ div {
 
 #notice {
   color: green;
+  display: flex;
+  justify-content: center;
 }
 
 .field_with_errors {
