@@ -20,7 +20,7 @@
           <td><%= note.kind %></td>
           <td><%= note.component %></td>
           <td><%= note.description %></td>
-          <td><%= note.wiki %></td>
+          <td><%= link_to note.wiki, note.wiki %></td>
           <td><%= link_to 'Show', note %></td>
           <td><%= link_to 'Edit', edit_note_path(note) %></td>
           <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
