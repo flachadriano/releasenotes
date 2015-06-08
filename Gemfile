@@ -45,3 +45,9 @@ group :development, :test do
 end
 
 gem 'bootstrap-sass', '~> 3.3.4'
+
+# oauth
+gem 'therubyracer'
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-digitalocean'
