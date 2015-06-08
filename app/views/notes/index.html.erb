@@ -17,7 +17,7 @@
     <tbody>
       <% @notes.each do |note| %>
         <tr>
-          <td><%= note.kind %></td>
+          <td><%= note.kind_description %></td>
           <td><%= note.component %></td>
           <td><%= note.description %></td>
           <td><%= link_to note.wiki, note.wiki %></td>
