@@ -3,6 +3,7 @@ class Note < ActiveRecord::Base
 
 	validates :kind, presence: true
 	validates :component, presence: true
+	validates :ticket, presence: true
 	validates :description, presence: true, length: {maximum: 140}
 
 	def kind_description
