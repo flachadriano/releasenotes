@@ -20,6 +20,10 @@
     <%= f.select :component_id, Component.all.sort_by{ |c| c.description.downcase }.collect{ |c| [ c.description, c.id ] }, include_blank: true %>
   </div>
   <div class="field">
+    <%= f.label :ticket %><br>
+    <%= f.text_field :ticket %>
+  </div>
+  <div class="field">
     <%= f.label :description %><br>
     <%= f.text_field :description %>
   </div>

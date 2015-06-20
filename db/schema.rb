@@ -23,12 +23,13 @@ ActiveRecord::Schema.define(version: 20150620182238) do
   end
 
   create_table "notes", force: :cascade do |t|
-    t.integer  "kind",         null: false
-    t.integer  "component_id", null: false
-    t.string   "description",  null: false
+    t.integer  "kind",                       null: false
+    t.integer  "component_id",               null: false
+    t.string   "description",                null: false
     t.string   "wiki"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.string   "ticket",       default: "0", null: false
   end
 
   add_index "notes", ["component_id"], name: "index_notes_on_component_id", using: :btree
