@@ -20,7 +20,7 @@
           <td><%= note.component %></td>
           <td><%= note.ticket %></td>
           <td><%= note.description %></td>
-          <td><%= link_to note.wiki, note.wiki %></td>
+          <td><%= link_to note.wiki, note.wiki, target : "_blank" %></td>
           <td><%= link_to 'Show', note %></td>
           <td><%= link_to 'Edit', edit_note_path(note) if signed_in? %></td>
           <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } if signed_in? %></td>
