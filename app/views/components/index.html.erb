@@ -1,6 +1,9 @@
 <div class="panel panel-primary">
   <div class="panel-heading"><h1>Listing Components</h1></div>
 
+  <br>
+  <%= link_to 'New Component', new_component_path, class: "btn btn-primary" %>
+  
   <table class="table">
     <thead>
       <tr>
@@ -20,8 +23,4 @@
       <% end %>
     </tbody>
   </table>
-
-  <br>
-
-  <%= link_to 'New Component', new_component_path, class: "btn btn-primary" %>
 </div>

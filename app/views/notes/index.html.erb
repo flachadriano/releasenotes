@@ -1,9 +1,19 @@
+<%= form_tag notes_path, id: "search_form", class: "search_form", method: "get" do %>
+  <%= select_tag :sprint_id, 
+        options_from_collection_for_select(@sprints, "id", "name", params[:sprint_id]||@sprints.last.try(:id)),
+        onchange: "onchange_search_sprint()", class: "search_sprint" %>
+<% end %>
+
 <div class="panel panel-primary">
   <div class="panel-heading"><h1>Listing Notes</h1></div>
-
+  
+  <br/>
+  <%= link_to 'New Note', new_note_path, class: "btn btn-primary" if signed_in? %>
+  
   <table class="table">
     <thead>
       <tr>
+        <th>Release*</th>
         <th>Type</th>
         <th>Component</th>
         <th>Ticket</th>
@@ -16,6 +26,7 @@
     <tbody>
       <% @notes.each do |note| %>
         <tr>
+          <td><%= note.created_at.strftime "%m/%d/%Y" %></td>
           <td><%= note.kind_description %></td>
           <td><%= note.component %></td>
           <td><%= note.ticket %></td>
@@ -29,7 +40,6 @@
     </tbody>
   </table>
 
-  <br>
+  * Date format: Month/Day/Year
 
-  <%= link_to 'New Note', new_note_path, class: "btn btn-primary" if signed_in? %>
 </div>

@@ -1,6 +1,9 @@
 <div class="panel panel-primary">
   <div class="panel-heading"><h1>Listing Sprints</h1></div>
 
+  <br>
+  <%= link_to 'New Sprint', new_sprint_path, class: "btn btn-primary" if signed_in? %>
+  
   <table class="table">
     <thead>
       <tr>
@@ -24,8 +27,4 @@
       <% end %>
     </tbody>
   </table>
-
-  <br>
-
-  <%= link_to 'New Sprint', new_sprint_path, class: "btn btn-primary" if signed_in? %>
 </div>

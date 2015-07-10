@@ -5,7 +5,17 @@ class NotesController < ApplicationController
   # GET /notes
   # GET /notes.json
   def index
-    @notes = Note.all
+    @sprints = Sprint.order(:id)
+    
+    params[:sprint_id] ||= @sprints.last.try(:id)
+    
+    # when does not have any sprint
+    if (params[:sprint_id])
+      sprint = Sprint.find_by_id params[:sprint_id]
+      @notes = Note.where(created_at: [sprint.starts_at..sprint.end_at])
+    else
+      @notes = Note.all
+    end
   end
 
   # GET /notes/1
