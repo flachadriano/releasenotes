@@ -12,7 +12,7 @@ class NotesController < ApplicationController
     # when does not have any sprint
     if (params[:sprint_id])
       sprint = Sprint.find_by_id params[:sprint_id]
-      @notes = Note.where(created_at: [sprint.starts_at..sprint.end_at])
+      @notes = Note.where(created_at: [sprint.starts_at..sprint.end_at.end_of_day])
     else
       @notes = Note.all
     end
